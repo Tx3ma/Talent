@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publicar Oferta - Talento Local</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .btn-submit { background-color: #16a34a; color: white; transition: background-color 0.3s ease; }
+        .btn-submit:hover { background-color: #15803d; }
+    </style>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen p-4">
+    <div class="w-full max-w-2xl bg-white p-8 rounded-lg shadow-md">
+        <a href="index.html" class="text-blue-600 hover:underline mb-6 inline-block"><i class="fas fa-arrow-left mr-2"></i>Volver al tablón</a>
+        <h2 class="text-3xl font-bold text-center text-gray-800 mb-6">Publicar una Oferta</h2>
+        <p class="text-center text-gray-500 mb-8">Rellena los datos para que tu oferta sea visible para todos los jugadores de la zona.</p>
+        
+        <div class="space-y-4">
+            <input type="text" id="club-name" placeholder="Nombre del Club" required class="w-full p-3 border border-gray-300 rounded-lg">
+            <input type="email" id="contact-email" placeholder="Email de Contacto del Club" required class="w-full p-3 border border-gray-300 rounded-lg">
+            <hr/>
+            <input type="text" id="offer-title" placeholder="Título de la oferta (ej. 'Buscamos Delantero para Cadete A')" required class="w-full p-3 border border-gray-300 rounded-lg">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <select id="offer-category" required class="w-full p-3 border border-gray-300 rounded-lg">
+                    <option value="">Selecciona Categoría</option>
+                    <option>Juvenil</option>
+                    <option>Cadete</option>
+                    <option>Infantil</option>
+                    <option>Alevín</option>
+                    <option>Benjamín</option>
+                    <option>Prebenjamín</option>
+                </select>
+                <select id="offer-position" required class="w-full p-3 border border-gray-300 rounded-lg">
+                    <option value="">Selecciona Posición</option>
+                    <option>Portero</option>
+                    <option>Defensa</option>
+                    <option>Centrocampista</option>
+                    <option>Delantero</option>
+                </select>
+            </div>
+            <textarea id="offer-description" placeholder="Describe la oferta (días de entreno, requisitos, etc.)" required class="w-full p-3 border border-gray-300 rounded-lg" rows="4"></textarea>
+            
+            <button type="button" id="publish-button" class="btn-submit w-full text-white p-3 rounded-lg font-semibold text-lg">
+                <i class="fas fa-paper-plane mr-2"></i>Publicar Oferta Ahora
+            </button>
+        </div>
+    </div>
+
+    <script type="module" src="firebase-logic.js"></script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Talento Local - Fútbol Base y Amateur</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #1f2937;
+            background: 
+                linear-gradient(rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.92)),
+                url('https://images.unsplash.com/photo-1579952363873-27f3bade9f55?q=80&w=1935&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .header-bg { background-color: #1e3a8a; }
+        .text-accent { color: #f59e0b; }
+        .btn-publish { background-color: #16a34a; color: white; transition: background-color 0.3s ease; }
+        .btn-publish:hover { background-color: #15803d; }
+        .card { background-color: white; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); border-radius: 0.75rem; border: 1px solid #e5e7eb; }
+        .tag { background-color: #e0f2fe; color: #0c4a6e; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 600; }
+        .delete-btn { background-color: #fee2e2; color: #b91c1c; font-size: 0.75rem; transition: background-color 0.2s ease; }
+        .delete-btn:hover { background-color: #fecaca; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+    <header class="header-bg text-white p-4 shadow-md sticky top-0 z-10">
+        <div class="container mx-auto flex justify-between items-center max-w-5xl">
+            <h1 class="text-2xl font-bold flex items-center">
+                <i class="fas fa-futbol mr-2 text-accent"></i> Talento Local
+            </h1>
+            <a href="publish.html" class="btn-publish px-4 py-2 rounded-full font-semibold text-sm shadow-sm flex items-center">
+                <i class="fas fa-plus mr-2"></i> Publicar Oferta
+            </a>
+        </div>
+    </header>
+
+    <main class="flex-grow container mx-auto p-4 md:p-6 max-w-5xl">
+        <div class="bg-white/80 backdrop-blur-sm p-4 rounded-xl shadow-sm mb-6">
+            <input type="text" id="searchInput" placeholder="Buscar por club, posición o categoría..." class="flex-grow p-3 border border-gray-300 rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-blue-600">
+        </div>
+        <div id="offersList" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            </div>
+        <div id="noOffersMessage" class="hidden text-center mt-10 p-6 rounded-lg bg-white bg-opacity-90 shadow-sm">
+            <i class="fas fa-search text-4xl mb-4 text-gray-400"></i>
+            <p class="text-lg font-semibold text-gray-700">No hay ofertas publicadas</p>
+            <p class="text-gray-500">¡Anímate y sé el primero en publicar una!</p>
+        </div>
+    </main>
+
+    <footer class="bg-gray-800 text-gray-400 p-4 text-center mt-auto">
+        <p>&copy; 2025 Talento Local. Todos los derechos reservados.</p>
+    </footer>
+
+    <script type="module" src="firebase-logic.js"></script>
+</body>
+</html>
